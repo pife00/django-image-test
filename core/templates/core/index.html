@@ -6,19 +6,21 @@ Home
 
 {% block content %}
 
-<div class="bg-gray-100 p-3 flex justify-between" >
+<div class="bg-gray-100 p-3" >
     <form action="." method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
         <input class=" hover:cursor-pointer p-3 bg-blue-700 rounded-xl font-semibold text-white hover:bg-blue-900"  type="submit" value="Upload">
     </form>
-
-    <div class="" >
-
+    <div class="grid grid-cols-3" >
+        {% for item in items %}
+        <div class="p-3 bg-gray-100" >
+            {{item.image.url}}
+            <img class="rounded-lg" src="{{ item.image.url }} " />
+        </div>
+        {% endfor %}
     </div>
-    <div class="" >
 
-    </div>
 </div>
 
 {% endblock %}

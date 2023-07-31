@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import ImageForm
+from .models import imageData
 # Create your views here.
 
 def index(request):
@@ -9,6 +10,8 @@ def index(request):
             form.save()
     else:
         form = ImageForm()
+    items = imageData.objects.all();
     return render(request,'core/index.html',{
-        'form':form
+        'form':form,
+        'items':items
     })
