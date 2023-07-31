@@ -6,6 +6,19 @@ Home
 
 {% block content %}
 
-Hello World
+<div class="bg-gray-100 p-3 flex justify-between" >
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class=" hover:cursor-pointer p-3 bg-blue-700 rounded-xl font-semibold text-white hover:bg-blue-900"  type="submit" value="Upload">
+    </form>
+
+    <div class="" >
+
+    </div>
+    <div class="" >
+
+    </div>
+</div>
 
 {% endblock %}
