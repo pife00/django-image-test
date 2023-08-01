@@ -80,10 +80,13 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        "OPTIONS": {},
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "1077456675P",
+        "HOST": "db.stpmzsgkjggjgtfpfexn.supabase.co",
+        "PORT": "5432",
     }
 }
 
